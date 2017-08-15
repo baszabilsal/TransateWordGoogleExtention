@@ -1,0 +1,23 @@
+﻿{
+	"name": "TranslateStore",
+	"version": "1.0",
+	"manifest_version": 2,
+
+	"description": "Store data when you translate",
+	"icons": {
+		"128": "rabbit.png"
+	},"background":{"scripts":["background.js"]},
+	"browser_action": {
+		"default_icon": "rabbit.png",
+		"default_popup": "popup.html",
+		"default_title": "Vocabury"
+	},
+	"content_scripts": [ {
+	"js": [ "jquery-1.8.2.min.js", "content.js" ],
+	"matches": [ "http://*/*", "https://*/*" ],
+	"run_at": "document_idle"
+	} ],
+	"minimum_chrome_version": "18",
+	"permissions": [ "http://*/*", "https://*/*", "unlimitedStorage", "contextMenus", "cookies", "tabs", "notifications","storage" ]
+
+}
